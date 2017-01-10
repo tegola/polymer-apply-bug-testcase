@@ -1,0 +1,54 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../bower_components/paper-dropdown-menu/paper-dropdown-menu.html">
+<link rel="import" href="../bower_components/paper-listbox/paper-listbox.html">
+<link rel="import" href="../bower_components/paper-item/paper-item.html">
+<link rel="import" href="../bower_components/paper-styles/color.html">
+
+<dom-module id="my-custom-element">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+      /* Input borders for the dropdown menu */
+      paper-dropdown-menu {
+        --paper-input-container-input: {
+          box-sizing: border-box;
+          margin-bottom: -1px;
+          border: 1px solid var(--paper-grey-400);
+          border-right: 0;
+          padding: 0.5rem;
+        };
+      }
+    </style>
+
+    <div class="card">
+      <paper-input label="Input inside custom element"></paper-input>
+
+      <paper-dropdown-menu label="Dropdown inside custom element">
+        <paper-listbox class="dropdown-content">
+          <paper-item>Item 1</paper-item>
+          <paper-item>Item 2</paper-item>
+          <paper-item>Item 3</paper-item>
+        </paper-listbox>
+      </paper-dropdown-menu>
+    </div>
+  </template>
+
+  <script>
+    Polymer({
+      is: 'my-custom-element',
+    });
+  </script>
+</dom-module>
