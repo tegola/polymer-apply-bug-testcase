@@ -32,30 +32,35 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         /* Add borders and padding, and reduce margin to underline */
         --paper-input-container-input: {
           box-sizing: border-box;
-          margin-bottom: -1px;
           border: 1px solid var(--paper-grey-400);
+          border-bottom: 0;
           padding: 0.5rem;
         };
 
-        /* Hide underline when not focused */
+        /* Use the underline as the bottom border */
         --paper-input-container-underline: {
-          border: 0;
+          border-color: var(--paper-grey-400);
+          margin-bottom: 1px;
         };
 
         /*
           Add borders to paper-dropdown-menu arrow section too.
           Since there is no mixin to override the the input section, we set
-          that in shared-styles.html (for all dropdowns) and in
-          my-custom-element.html (for that element only). See the relative files.
+          that in my-view1.html (for dropdowns in that view) and in
+          my-custom-element.html (for that element only). See those files.
          */
         --paper-dropdown-menu-icon: {
-          margin-bottom: -1px;
-          border: 1px solid var(--paper-grey-400);
-          border-left: 0;
+          border-top: 1px solid var(--paper-grey-400);
+          border-right: 1px solid var(--paper-grey-400);
           padding: 0.5rem;
         };
       }
-
+      
+      my-view1 {
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+      }
     </style>
 
     <my-view1 name="view1"></my-view1>

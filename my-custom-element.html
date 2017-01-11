@@ -15,25 +15,23 @@
       paper-dropdown-menu {
         --paper-input-container-input: {
           box-sizing: border-box;
-          margin-bottom: -1px;
           border: 1px solid var(--paper-grey-400);
-          border-right: 0;
+          border-bottom: 0;
+          border-right: 0; /* This is */
           padding: 0.5rem;
         };
       }
     </style>
 
-    <div class="card">
-      <paper-input label="Input inside custom element"></paper-input>
+    <paper-input label="Input inside custom element"></paper-input>
 
-      <paper-dropdown-menu label="Dropdown inside custom element">
-        <paper-listbox class="dropdown-content">
-          <paper-item>Item 1</paper-item>
-          <paper-item>Item 2</paper-item>
-          <paper-item>Item 3</paper-item>
-        </paper-listbox>
-      </paper-dropdown-menu>
-    </div>
+    <paper-dropdown-menu label="Dropdown inside custom element">
+      <paper-listbox class="dropdown-content">
+        <paper-item>Item 1</paper-item>
+        <paper-item>Item 2</paper-item>
+        <paper-item>Item 3</paper-item>
+      </paper-listbox>
+    </paper-dropdown-menu>
   </template>
 
   <script>

@@ -8,42 +8,46 @@
 <dom-module id="my-view1">
   <template>
     <style>
+      :host {
+        display: block;
+      }
+
+      code {
+        background-color: #f2f2f2;
+        padding: 0 0.25em;
+      }
 
       /* Input borders in dropdown menus */
       paper-dropdown-menu {
         --paper-input-container-input: {
           box-sizing: border-box;
-          margin-bottom: -1px;
           border: 1px solid var(--paper-grey-400);
-          border-right: 0;
+          border-bottom: 0;
+          border-right: 0; /* This */
           padding: 0.5rem;
         };
       }
-
-      :host {
-        display: block;
-
-        padding: 10px;
-      }
     </style>
 
-    <div class="card">
-      <p>Inputs <strong>shouldn't</strong> have the right border, but they do, with <code>useNativeCSSProperties: true</code>.</p>
+    <h3>What to look for</h3>
+    <p>Inputs are missing the right border, <strong>but they shouldn't</strong>.</p>
 
-      <paper-input label="Normal input"></paper-input>
+    <h3>Cause</h3>
+    <p><code>--paper-input-container-input</code> is bleeding out of the <code>paper-dropdown-menu</code> selector (specified in <code>my-view1</code> and <code>my-custom-element</code>), when using <code>useNativeCSSProperties: true</code>. No problems with <code>useNativeCSSProperties: false</code></p>
 
-      <paper-dropdown-menu label="Normal dropdown">
-        <paper-listbox class="dropdown-content">
-          <paper-item>Item 1</paper-item>
-          <paper-item>Item 2</paper-item>
-          <paper-item>Item 3</paper-item>
-        </paper-listbox>
-      </paper-dropdown-menu>
+    <paper-input label="Normal input"></paper-input>
 
-      <br><br>
+    <paper-dropdown-menu label="Normal dropdown">
+      <paper-listbox class="dropdown-content">
+        <paper-item>Item 1</paper-item>
+        <paper-item>Item 2</paper-item>
+        <paper-item>Item 3</paper-item>
+      </paper-listbox>
+    </paper-dropdown-menu>
 
-      <my-custom-element></my-custom-element>
-    </div>
+    <br><br>
+
+    <my-custom-element></my-custom-element>
   </template>
 
   <script>

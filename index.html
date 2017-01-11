@@ -1,9 +1,13 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>Polymer apply bug test case</title>
+
     <!-- Polyfill Web Components for older browsers -->
     <script src="../bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
-    <title>My App</title>
     <script>
       // Setup Polymer options
       window.Polymer = {
@@ -11,7 +15,6 @@
         lazyRegister: true,
         useNativeCSSProperties: true
       };
-       
     </script>
     <link rel="import" href="my-app.html">
   </head>
@@ -19,5 +22,4 @@
   <body>
     <my-app></my-app>
   </body>
-
 </html>
