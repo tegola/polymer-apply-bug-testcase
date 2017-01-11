@@ -3,7 +3,6 @@
 <link rel="import" href="../bower_components/paper-dropdown-menu/paper-dropdown-menu.html">
 <link rel="import" href="../bower_components/paper-listbox/paper-listbox.html">
 <link rel="import" href="../bower_components/paper-item/paper-item.html">
-<link rel="import" href="my-custom-element.html">
 
 <dom-module id="my-view1">
   <template>
@@ -33,7 +32,13 @@
     <p>Inputs are missing the right border, <strong>but they shouldn't</strong>.</p>
 
     <h3>Cause</h3>
-    <p><code>--paper-input-container-input</code> is bleeding out of the <code>paper-dropdown-menu</code> selector (specified in <code>my-view1</code> and <code>my-custom-element</code>), when using <code>useNativeCSSProperties: true</code>. No problems with <code>useNativeCSSProperties: false</code></p>
+    <p><code>--paper-input-container-input</code> is bleeding out of the <code>paper-dropdown-menu</code> selector (specified in <code>my-view1</code>), when using <code>useNativeCSSProperties: true</code>. No problems with <code>useNativeCSSProperties: false</code></p>
+
+    <h3>Notes</h3>
+    <ol>
+      <li>In the Responsive view in Chrome, with a device selected (e.g.: iPhone 5) the border shows up after a reload, with either <code>useNativeCSSProperties</code> configuration.</li>
+      <li>View this in Chrome, as I didn't test it in other browsers.</li>
+    </ol>
 
     <paper-input label="Normal input"></paper-input>
 
@@ -44,10 +49,6 @@
         <paper-item>Item 3</paper-item>
       </paper-listbox>
     </paper-dropdown-menu>
-
-    <br><br>
-
-    <my-custom-element></my-custom-element>
   </template>
 
   <script>
