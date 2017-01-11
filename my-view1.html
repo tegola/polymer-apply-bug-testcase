@@ -20,10 +20,11 @@
       paper-dropdown-menu {
         --paper-input-container-input: {
           box-sizing: border-box;
+          padding: 0.5rem;
           border: 1px solid var(--paper-grey-400);
           border-bottom: 0;
-          border-right: 0; /* This */
-          padding: 0.5rem;
+          border-right: 0; /* This bleeds out */
+          background-color: rgba(255, 0, 0, 0.25); /* This does not */
         };
       }
     </style>
